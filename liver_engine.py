@@ -62,7 +62,7 @@ with st.sidebar:
 
 input_features_list = [add_age, add_Total_Bilibubin, add_Alkaline_Photophase, Alamine_Aminotransferase, Asparate_Aminotransferase]
 input_features = np.array(input_features_list)
-array.reshape(1, -1)
+input_features.reshape(1, -1)
 
 if clicked:
     prediction = begin_scan(input_features)
