@@ -61,7 +61,6 @@ with st.sidebar:
         Gender = 0
     else:
         Gender = 1
-    Gender = gender_check(Gender)
     Asparate_Aminotransferase = st.text_input('Asparate Aminotransferase')
     clicked = st.button('BEGIN')
 
