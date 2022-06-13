@@ -45,6 +45,7 @@ def begin_scan(data):
     return rf_predicted
 
 import streamlit as st
+import time
 
 st.title("Liver Disease Detection System")
 st.header("Where hope arrives!")
@@ -63,6 +64,25 @@ input_features = np.array(input_features_list)
 
 if clicked:
     prediction = begin_scan(input_features)
+    with st.spinner('Analyzing, Please wait...'):
+        time.sleep(5)
+    st.success('Analysis Completed')
+
+    with st.expander("Confidence Metrics"):
+         st.subheader("Analysis Results:")
+         st.metric(label="Random Forest Score", value=random_forest_score)
+         st.metric(label="Random Forest Test Score", value=random_forest_score_test)
+         st.metric(label="Accuracy", value=accuracy_score(y_test,rf_predicted))
+
+    st.subheader("Prediction:")
+    if prediction == 0:
+        st.caption("Positive")
+        st.write("Disease Deteced! Further evaluation is advised")
+    else:
+        st.caption("Negative")
+        st.write("No disease detected.")
+
+
 
 
 
