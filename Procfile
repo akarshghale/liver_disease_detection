@@ -1,1 +1,1 @@
-web: python liver_engine.py
+web: sh setup.sh && streamlit run liver_engine.py
