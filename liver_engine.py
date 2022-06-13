@@ -4,7 +4,7 @@ import numpy as np
 import seaborn as sns
 from sklearn.preprocessing import LabelEncoder
 
-"""#Engine Begins"""
+#Engine Begins
 
 liver_df= pd.read_csv("liver_dataset.csv")
 
@@ -47,7 +47,7 @@ def begin_scan(data):
 import streamlit as st
 
 st.title("Liver Disease Detection System")
-st.write("##")
+st.write("##Where hope arrives!")
 
 with st.sidebar:
     st.write("##Please Input Patient Parameters")
