@@ -57,7 +57,7 @@ with st.sidebar:
     add_Total_Bilirubin = st.text_input('Total Bilirubin')
     add_Direct_Bilirubin = st.text_input('Direct Bilirubin')
     Gender = st.radio('Gender',('Male', 'Female'))
-    def gender_check(gender)
+    def gender_check(gender):
         if Gender == 'Male':
            return Gender = 0
         else:
