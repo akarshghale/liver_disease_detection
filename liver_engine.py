@@ -54,17 +54,20 @@ st.header("Where hope arrives!")
 with st.sidebar:
     st.write("Please Input Patient Parameters")
     add_age = st.text_input('Patient Age')
-    add_Total_Bilibubin =st.text_input('Total Bilibubin')
-    add_Alkaline_Photophase = st.text_input('Alkaline Photophase')
-    Alamine_Aminotransferase = st.slider('Alamine Aminotransferase', 0, 100)
-    Asparate_Aminotransferase = st.slider('Asparate Aminotransferase', 0, 100)
+    add_Total_Bilibubin =st.text_input('Total Bilirubin')
+    add_Direct_Bilirubin = st.text_input('Direct Bilirubin')
+    Gender = st.radio('Gender',('Male', 'Female'))
+    if Gender == 'Male':
+        Gender == 0
+    else:
+        Gender == 1
+    Asparate_Aminotransferase = st.text_input('Asparate Aminotransferase')
     clicked = st.button('BEGIN')
 
-input_features_list = [add_age, add_Total_Bilibubin, add_Alkaline_Photophase, Alamine_Aminotransferase, Asparate_Aminotransferase]
+input_features_list = [Asparate_Aminotransferase, add_age, Gender, add_Total_Bilirubin, add_Direct_Bilirubin]
 input_features = np.array(input_features_list)
-print(input_features)
-input_features = input_features.reshape(1, -1)
-print(input_features)
+#Convert to df
+input_features = pd.DataFrame(input_features, columns = ['Unnamed: 0','Age','Gender_cat', 'Total_Bilirubin', 'Direct_Bilirubin'])
 
 if clicked:
     prediction = begin_scan(input_features)
@@ -72,11 +75,11 @@ if clicked:
         time.sleep(5)
     st.success('Analysis Completed')
 
-    with st.expander("Confidence Metrics"):
-         st.subheader("Analysis Results:")
-         st.metric(label="Random Forest Training Score", value=global random_forest_score)
-         st.metric(label="Random Forest Test Score", value=global random_forest_score_test)
-         st.metric(label="Accuracy", value=accuracy_score(y_test,rf_predicted))
+    #with st.expander("Confidence Metrics"):
+       #  st.subheader("Analysis Results:")
+        # st.metric(label="Random Forest Training Score", value=global random_forest_score)
+        # st.metric(label="Random Forest Test Score", value=global random_forest_score_test)
+        # st.metric(label="Accuracy", value=accuracy_score(y_test,rf_predicted))
 
     st.subheader("Prediction:")
     if prediction == 0:
