@@ -57,11 +57,10 @@ with st.sidebar:
     add_Total_Bilirubin = st.text_input('Total Bilirubin')
     add_Direct_Bilirubin = st.text_input('Direct Bilirubin')
     Gender = st.radio('Gender',('Male', 'Female'))
-    def gender_check(gender):
-        if Gender == 'Male':
-           return Gender = 0
-        else:
-           return Gender = 1
+    if Gender == 'Male':
+        Gender = 0
+    else:
+        Gender = 1
     Gender = gender_check(Gender)
     Asparate_Aminotransferase = st.text_input('Asparate Aminotransferase')
     clicked = st.button('BEGIN')
