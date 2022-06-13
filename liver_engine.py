@@ -34,14 +34,15 @@ def begin_scan(data):
 
     rf_predicted = random_forest.predict(X_test)
 
-    global random_forest_score = round(random_forest.score(X_train, y_train) * 100, 2)
-    global random_forest_score_test = round(random_forest.score(X_test, y_test) * 100, 2)
+    random_forest_score = round(random_forest.score(X_train, y_train) * 100, 2)
+    random_forest_score_test = round(random_forest.score(X_test, y_test) * 100, 2)
     print('Random Forest Score: \n', random_forest_score)
     print('Random Forest Test Score: \n', random_forest_score_test)
     print('Accuracy: \n', accuracy_score(y_test,rf_predicted))
     print(confusion_matrix(y_test,rf_predicted))
     print(classification_report(y_test,rf_predicted))
-
+    
+    rf_predicted = random_forest.predict(data)
     return rf_predicted
 
 import streamlit as st
