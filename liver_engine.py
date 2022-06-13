@@ -47,10 +47,10 @@ def begin_scan(data):
 import streamlit as st
 
 st.title("Liver Disease Detection System")
-st.write("##Where hope arrives!")
+st.header("Where hope arrives!")
 
 with st.sidebar:
-    st.write("##Please Input Patient Parameters")
+    st.write("Please Input Patient Parameters")
     add_age = st.text_input('Patient Age')
     add_Total_Bilibubin =st.text_input('Total Bilibubin')
     add_Alkaline_Photophase = st.text_input('Alkaline Photophase')
@@ -59,7 +59,7 @@ with st.sidebar:
     clicked = st.button('BEGIN')
 
 input_features_list = [add_age, add_Total_Bilibubin, add_Alkaline_Photophase, Alamine_Aminotransferase, Asparate_Aminotransferase]
-input_features = numpy.array(input_features_list)
+input_features = np.array(input_features_list)
 
 if clicked:
     prediction = begin_scan(input_features)
