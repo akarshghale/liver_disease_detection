@@ -42,8 +42,8 @@ def begin_scan(data):
     print(confusion_matrix(y_test,rf_predicted))
     print(classification_report(y_test,rf_predicted))
     
-    rf_predicted = random_forest.predict(data)
-    return rf_predicted
+    predicted = random_forest.predict(data)
+    return predicted
 
 import streamlit as st
 import time
@@ -74,8 +74,8 @@ if clicked:
 
     with st.expander("Confidence Metrics"):
          st.subheader("Analysis Results:")
-         st.metric(label="Random Forest Training Score", value=random_forest_score)
-         st.metric(label="Random Forest Test Score", value=random_forest_score_test)
+         st.metric(label="Random Forest Training Score", value=global random_forest_score)
+         st.metric(label="Random Forest Test Score", value=global random_forest_score_test)
          st.metric(label="Accuracy", value=accuracy_score(y_test,rf_predicted))
 
     st.subheader("Prediction:")
