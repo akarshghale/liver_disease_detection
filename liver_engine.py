@@ -6,7 +6,7 @@ from sklearn.preprocessing import LabelEncoder
 
 """#Engine Begins"""
 
-liver_df= pd.read_csv("/home/liver_dataset.csv")
+liver_df= pd.read_csv("liver_dataset.csv")
 
 X = liver_df.iloc[:,0:5]  #independent columns
 y = liver_df.iloc[:,-1]    #target column i.e Dataset
