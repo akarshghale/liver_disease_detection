@@ -55,19 +55,15 @@ with st.sidebar:
     st.write("Please Input Patient Parameters")
     add_age = st.text_input('Patient Age')
     add_Total_Bilirubin = st.text_input('Total Bilirubin')
-    add_Direct_Bilirubin = st.text_input('Direct Bilirubin')
-    Gender = st.radio('Gender',('Male', 'Female'))
-    if Gender == 'Male':
-        Gender = 0
-    else:
-        Gender = 1
+    add_Alkaline_Phosphotase = st.text_input('Alkaline Phosphotase')
+    add_Alamine_Aminotransferase = st.text_input('Alamine Aminotransferase')
     Asparate_Aminotransferase = st.text_input('Asparate Aminotransferase')
     clicked = st.button('BEGIN')
 
-input_features_list = [Asparate_Aminotransferase, add_age, Gender, add_Total_Bilirubin, add_Direct_Bilirubin]
+input_features_list = [add_age, add_Total_Bilirubin, add_Alkaline_Phosphotase, add_Alamine_Aminotransferase, Asparate_Aminotransferase]
 input_features = np.array(input_features_list)
 #Convert to df
-input_features = pd.DataFrame(input_features, columns = ['Unnamed: 0','Age','Gender_cat', 'Total_Bilirubin', 'Direct_Bilirubin'])
+input_features = pd.DataFrame(input_features, columns = ['Age', 'Total_Bilirubin', 'Alkaline_Phosphotase', 'Alamine_Aminotransferase', 'Asparate_Aminotransferase'])
 
 if clicked:
     prediction = begin_scan(input_features)
