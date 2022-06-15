@@ -60,13 +60,13 @@ with st.sidebar:
     Asparate_Aminotransferase = st.text_input('Asparate Aminotransferase')
     clicked = st.button('BEGIN')
 
-input_features_list = [add_age, add_Total_Bilirubin, add_Alkaline_Phosphotase, add_Alamine_Aminotransferase, Asparate_Aminotransferase]
-input_features = np.array(input_features_list)
+input_features_list = [[add_age, add_Total_Bilirubin, add_Alkaline_Phosphotase, add_Alamine_Aminotransferase, Asparate_Aminotransferase]]
+#input_features = np.array(input_features_list)
 #Convert to df
-input_features = pd.DataFrame(input_features, columns = ['Age', 'Total_Bilirubin', 'Alkaline_Phosphotase', 'Alamine_Aminotransferase', 'Asparate_Aminotransferase'])
+#input_features = pd.DataFrame(input_features, columns = ['Age', 'Total_Bilirubin', 'Alkaline_Phosphotase', 'Alamine_Aminotransferase', 'Asparate_Aminotransferase'])
 
 if clicked:
-    prediction = begin_scan(input_features)
+    prediction = begin_scan(input_features_list)
     with st.spinner('Analyzing, Please wait...'):
         time.sleep(5)
     st.success('Analysis Completed')
@@ -78,7 +78,7 @@ if clicked:
         # st.metric(label="Accuracy", value=accuracy_score(y_test,rf_predicted))
 
     st.subheader("Prediction:")
-    if prediction == 0:
+    if prediction[0] == 0:
         st.caption("Positive")
         st.write("Disease Deteced! Further evaluation is advised")
     else:
