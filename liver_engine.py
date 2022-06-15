@@ -70,8 +70,7 @@ if clicked:
     with st.spinner('Analyzing, Please wait...'):
         time.sleep(5)
     st.success('Analysis Completed')
-
-   ''' with st.expander("Confidence Metrics"):
+''' with st.expander("Confidence Metrics"):
          st.subheader("Analysis Results:")
          st.metric(label="Random Forest Training Score", value=random_forest_score)
          st.metric(label="Random Forest Test Score", value=random_forest_score_test)
