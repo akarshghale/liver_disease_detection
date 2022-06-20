@@ -79,7 +79,7 @@ if clicked:
         # st.metric(label="Accuracy", value=accuracy_score(y_test,rf_predicted))
 
     st.subheader("Prediction:")
-    st.caption(print(type(prediction)))
+    st.caption(print(prediction)))
     if prediction[0] == 1:
         st.caption("Positive")
         st.write("Disease Deteced! Further evaluation is advised")
