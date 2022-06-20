@@ -43,6 +43,7 @@ def begin_scan(data):
     print(classification_report(y_test,rf_predicted))
     
     predicted = random_forest.predict(data)
+    predicted = predicted.tolist()
     return predicted
 
 import streamlit as st
