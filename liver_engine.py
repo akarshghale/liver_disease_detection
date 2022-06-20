@@ -82,10 +82,10 @@ if clicked:
     st.subheader("Prediction:")
     if add_Dataset == '0':
         if prediction[0] == 1:
-            st.caption("Positive")
+            st.metric(label="Gas price", value='Positive')
             st.write("Disease Deteced! Further evaluation is advised")
         elif prediction[0] == 2:
-            st.caption("Negative")
+            st.metric(label="Gas price", value='Negative')
             st.write("No disease detected.")
     else:
         st.caption("Negative")
