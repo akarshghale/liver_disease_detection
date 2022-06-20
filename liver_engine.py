@@ -57,8 +57,8 @@ with st.sidebar:
     add_age = st.text_input('Patient Age')
     add_Total_Bilirubin = st.text_input('Total Bilirubin')
     add_Alkaline_Phosphotase = st.text_input('Alkaline Phosphotase')
-    add_Alamine_Aminotransferase = st.text_input('Alamine Aminotransferase')
-    Asparate_Aminotransferase = st.text_input('Asparate Aminotransferase')
+    add_Alamine_Aminotransferase = st.slider('Alamine Aminotransferase', 0, 100)
+    Asparate_Aminotransferase = st.slider('Asparate Aminotransferase', 0, 100)
     add_Dataset = st.select_slider('Dataset', options=['0','1'])
     clicked = st.button('BEGIN')
 
