@@ -79,17 +79,16 @@ if clicked:
        #  st.metric(label="Random Forest Test Score", value=random_forest_score_test)
         # st.metric(label="Accuracy", value=accuracy_score(y_test,rf_predicted))
 
-    st.subheader("Prediction:")
     if add_Dataset == '0':
         if prediction[0] == 1:
-            st.metric(label="Gas price", value='Positive')
-            st.write("Disease Deteced! Further evaluation is advised")
+            st.metric(label="Prediction:", value='Positive')
+            st.warning('Disease Detected! Further evaluation is advised.')
         elif prediction[0] == 2:
-            st.metric(label="Gas price", value='Negative')
-            st.write("No disease detected.")
+            st.metric(label="Prediction", value='Negative')
+            st.info("No disease detected.")
     else:
-        st.caption("Negative")
-        st.write("No disease detected.")
+        st.metric(label="Prediction", value='Negative')
+        st.info('No disease detected.')
 
 
 
