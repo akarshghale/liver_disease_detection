@@ -60,7 +60,7 @@ with st.sidebar:
     Asparate_Aminotransferase = st.text_input('Asparate Aminotransferase')
     clicked = st.button('BEGIN')
 
-input_features_list = [[add_age, add_Total_Bilirubin, add_Alkaline_Phosphotase, add_Alamine_Aminotransferase, Asparate_Aminotransferase]]
+input_features_list = [[add_age], [add_Total_Bilirubin], [add_Alkaline_Phosphotase], [add_Alamine_Aminotransferase], [Asparate_Aminotransferase]]
 #input_features = np.array(input_features_list)
 #Convert to df
 #input_features = pd.DataFrame(input_features, columns = ['Age', 'Total_Bilirubin', 'Alkaline_Phosphotase', 'Alamine_Aminotransferase', 'Asparate_Aminotransferase'])
