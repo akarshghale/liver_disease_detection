@@ -59,6 +59,7 @@ with st.sidebar:
     add_Alkaline_Phosphotase = st.text_input('Alkaline Phosphotase')
     add_Alamine_Aminotransferase = st.text_input('Alamine Aminotransferase')
     Asparate_Aminotransferase = st.text_input('Asparate Aminotransferase')
+    add_Dataset = st.select_slider('Dataset', options=['0','1'])
     clicked = st.button('BEGIN')
 
 input_features_list = [[add_age, add_Total_Bilirubin, add_Alkaline_Phosphotase, add_Alamine_Aminotransferase, Asparate_Aminotransferase]]
@@ -79,10 +80,14 @@ if clicked:
         # st.metric(label="Accuracy", value=accuracy_score(y_test,rf_predicted))
 
     st.subheader("Prediction:")
-    if prediction[0] == 1:
-        st.caption("Positive")
-        st.write("Disease Deteced! Further evaluation is advised")
-    elif prediction[0] == 2:
+    if add_Dataset == 0:
+        if prediction[0] == 1:
+            st.caption("Positive")
+            st.write("Disease Deteced! Further evaluation is advised")
+        elif prediction[0] == 2:
+            st.caption("Negative")
+            st.write("No disease detected.")
+    else:
         st.caption("Negative")
         st.write("No disease detected.")
 
